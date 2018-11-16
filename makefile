@@ -1,6 +1,6 @@
 objects = *.o
 # Appending More Text to Variables
-objetcs += MainClient.o
+# objects += MainClient.o
 
 CFLAGS      = $(include_dir)
 include_dir = -I./
