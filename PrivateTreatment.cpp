@@ -1,28 +1,34 @@
 #include "PrivateTreatment.h"
 #include "CTreatment.h"
+#include "CreateException.h"
 
-int function1(int number, char* message)
+int function1(double number, char* message)
 {
   CTreatment treat1;
   double     val = 0.0f;
   int        ret = 0;
 
-  treat1.SetMeasure(3.14);
+  treat1.SetMeasure(number);
   val = treat1.GetMeasure();
   treat1.~CTreatment();
-  
+
+  /* test */
+  if (val!=number)
+     throw new CreateException(ERROR_UNIT_TEST,"Get/Set");
+
+  /* */
   ret = (int)(val*100);
   printf("\n%s %d\n","[DEBUG]",ret);
   return(ret);
 }
 
-int function2(int number) 
+int function2(double number, double precision)
 {
   CTreatment treat2;
   double val = 0.0f;
   int    ret = 0;
 
-  treat2.SetMeasure(3.14,0.1);
+  treat2.SetMeasure(number,precision);
   val = treat2.GetMeasure();
   treat2.~CTreatment();
 

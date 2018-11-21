@@ -20,8 +20,10 @@ MainClient : libPrivate.so MainClient.o
 libPrivate.so: PrivateTreatment.cpp PrivateTreatment.h
 	g++ $(CFLAGS) -c -o CTreatment.o CTreatment.cpp
 	g++ $(CFLAGS) -c -o PrivateTreatment.o PrivateTreatment.cpp
+	g++ $(CFLAGS) -c -o CreateException.o  CreateException.cpp
 	g++ -Wall -shared -fPIC -o libPrivate.so PrivateTreatment.cpp \
-		CTreatment.cpp
+		CTreatment.cpp \
+		CreateException.cpp
 
 CTreatment.o : CTreatment.cpp CTreatment.h
 	g++ -Wall -c CTreatment.cpp
