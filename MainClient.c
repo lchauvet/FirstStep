@@ -4,8 +4,8 @@
 #include <stdio.h>
 #include <dlfcn.h>
 
-typedef int (*T_func1)(int,char*);
-typedef int (*T_func2)(int);
+typedef int (*T_func1)(double,char*);
+typedef int (*T_func2)(double,double);
 
 T_func1 func1;
 T_func2 func2;
@@ -28,7 +28,7 @@ int main(int argc, char** argv) {
      fprintf(stderr,"%s\n",error);
      exit(1);
    }
-   res = (int)func1(1,NULL);
+   res = (int)func1(3.14,NULL);
 
    printf("\nfunction1 give : %d\n",res);
 
@@ -38,7 +38,7 @@ int main(int argc, char** argv) {
      fprintf(stderr,"%s\n",error);
      exit(1);
    }
-   res = (int)func2(1);
+   res = (int)func2(3.14,0.1);
    printf("\nfunction2 give : %d\n",res);
 
    dlclose(handle);
