@@ -7,23 +7,9 @@
 #ifdef __cplusplus
   extern "C" {
 #endif
-   /***
-    * @function    : function1
-    * @Description : Specific treatment (multiply by hundred)
-    * @parameters  : number, type double
-    *                message, type char*  (not used)
-    * @return      : result, type integer
-    */
-    int function1(double number, char* message);
 
-   /***
-    * @function    : function2
-    * @Description : Specific treatment (multiply by hundred)
-    * @parameters  : number, type double
-    *                precision, type double
-    * @return      : result, type integer
-    */
-    int function2(double number, double precision);
+    int function1(int number, char* message);
+    int function2(int number);
 
 #ifdef __cplusplus
 	}

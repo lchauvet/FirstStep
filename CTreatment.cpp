@@ -53,3 +53,7 @@ char* CTreatment::Crypto(int size) {
 	*destination++ = rand();
    return(destination);
 }
+
+void CTreatment::sePresenter() const {
+    cout << "Treatment" << endl;
+}

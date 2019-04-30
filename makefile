@@ -1,6 +1,6 @@
 objects = *.o
 # Appending More Text to Variables
-# objects += MainClient.o
+objetcs += MainClient.o
 
 CFLAGS      = $(include_dir)
 include_dir = -I./
@@ -19,11 +19,11 @@ MainClient : libPrivate.so MainClient.o
 # -o <name> - name of the output file
 libPrivate.so: PrivateTreatment.cpp PrivateTreatment.h
 	g++ $(CFLAGS) -c -o CTreatment.o CTreatment.cpp
+	g++ $(CFLAGS) -c -o CConfig.o CConfig.cpp
+	g++ $(CFLAGS) -c -o CMethod.o CMethod.cpp
 	g++ $(CFLAGS) -c -o PrivateTreatment.o PrivateTreatment.cpp
-	g++ $(CFLAGS) -c -o CreateException.o  CreateException.cpp
 	g++ -Wall -shared -fPIC -o libPrivate.so PrivateTreatment.cpp \
-		CTreatment.cpp \
-		CreateException.cpp
+		CTreatment.cpp CConfig.cpp CMethod.cpp
 
 CTreatment.o : CTreatment.cpp CTreatment.h
 	g++ -Wall -c CTreatment.cpp

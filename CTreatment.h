@@ -18,6 +18,8 @@ public:
      /*! surcharge */
      void   SetMeasure(double mes, double precision);
      char*  Crypto(int size);
+
+     void  sePresenter() const;
 };
 
 #endif
