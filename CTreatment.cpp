@@ -54,6 +54,6 @@ char* CTreatment::Crypto(int size) {
    return(destination);
 }
 
-void CTreatment::sePresenter() const {
+void CTreatment::sAfficher() const {
     cout << "Treatment" << endl;
 }

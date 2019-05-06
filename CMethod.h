@@ -8,6 +8,7 @@
 
 using namespace std;
 
+/* La classe CMethod derive de CTreatment. Elle recupere toutes ses proprietes et ses methodes */
 class CMethod : public CTreatment {
    private:
 	std::string 	m_nom;
@@ -19,8 +20,8 @@ class CMethod : public CTreatment {
 	~CMethod();
 	/* constructeur par copie */
 	CMethod(const CMethod& methodeACopier);
-	void calculerCompletement(int iterations) const;
-	void sePresenter() const;
+	void calculerCompletement(int iterations = 5) const;
+	void sAfficher() const;
 };
 
 #endif

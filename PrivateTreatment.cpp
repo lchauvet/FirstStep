@@ -16,25 +16,30 @@ int function1(int number, char* message)
   treat1.~CTreatment();
 
   ret = (int)(val*100);
-  printf("\n%s %d\n","[DEBUG]",ret);
+#ifdef DEBUG
+  printf("\n[ %s ] : retourne %d\n",__FUNCTION__,ret);
+#endif
   return(ret);
 }
 
 /************************************************
  * @function : function2
  ************************************************/
-int function2(int number) 
+int function2(int number)
 {
-  /* ajout */
-  CTreatment* objetMere  = new CTreatment();
-  CMethod*    objetFille = new CMethod();
-  objetMere = objetFille;
-  objetMere->sePresenter();
-  objetFille->sePresenter();
-  objetFille->calculerCompletement(3);
+  CTreatment* objetBase   = new CTreatment();
+  CMethod*    objetDerive = new CMethod();
 
-//  char* result = objetMere->Crypto(10);
-//  cout << "Resultat " << result << endl;
+  /* constructeur par copie */
+  CMethod*     autreMethode = objetDerive;
+
+  /* on n'affecte pas le derive à la base. on substitue un pointeur.   */
+  /* Les objets restent comme ils sont dans la memoire. on ne fait     */
+  /* que diriger le pointeur objetBase vers les attributs et methodes  */
+  /* hérités uniquement.                                               */
+  objetBase = objetDerive;
+  objetDerive->calculerCompletement();
+  objetDerive->sAfficher();
 
   CTreatment treat2;
   double val = 0.0f;
@@ -45,15 +50,13 @@ int function2(int number)
   treat2.~CTreatment();
 
   ret = (int)(val*100);
-  printf("\n%s %d\n","[DEBUG]",ret);
+#ifdef DEBUG
+  printf("\n[ %s ] retourne %d\n",__FUNCTION__,ret);
+#endif
   return(ret);
 }
 
 /* Main point d'entrée */
 int main(int argc, char** argv){
-   CTreatment treat3;
-   char* result = treat3.Crypto(10);
-   printf("\n[DEBUG] crypto :%s\n",result);
-   treat3.~CTreatment();
    return(0);
 }

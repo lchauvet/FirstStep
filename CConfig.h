@@ -9,10 +9,12 @@ using namespace std;
 class CConfig {
 	private:
 		std::string m_name;
-		static const char data[7];
+		static int  compteur;
 	public:
+		static int data[7];
 		CConfig(string name);
 		~CConfig();
+		int nombreInstances();
 };
 
 #endif

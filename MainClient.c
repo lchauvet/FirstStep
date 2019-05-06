@@ -30,7 +30,7 @@ int main(int argc, char** argv) {
    }
    res = (int)func1(1,NULL);
 
-   printf("\nfunction1 give : %d\n",res);
+   printf("\nIn function %s , function1 return %d\n",__FUNCTION__,res);
 
    func2 = (T_func2) dlsym(handle,"function2");
    if ((error = dlerror()) != NULL)
@@ -39,7 +39,7 @@ int main(int argc, char** argv) {
      exit(1);
    }
    res = (int)func2(1);
-   printf("\nfunction2 give : %d\n",res);
+   printf("\nIn function %s , function2 return %d\n",__FUNCTION__,res);
 
    dlclose(handle);
    return(0);

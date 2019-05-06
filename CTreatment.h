@@ -19,7 +19,7 @@ public:
      void   SetMeasure(double mes, double precision);
      char*  Crypto(int size);
 
-     void  sePresenter() const;
+     void  sAfficher() const;
 };
 
 #endif
