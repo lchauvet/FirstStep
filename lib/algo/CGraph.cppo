@@ -1,6 +1,0 @@
-#include "algo/CGraph.h"
-
-CGraph::CGraph(int nbNodes){
-	
-}
-
