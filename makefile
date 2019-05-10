@@ -1,9 +1,9 @@
 objects = *.o
 # Appending More Text to Variables
-objetcs += MainClient.o
+objects += MainClient.o
 
 CFLAGS      = $(include_dir)
-include_dir = -I./
+include_dir = -I./lib/inc/
 
 # Extra flags to give to the C++ compiler
 CXXFLAGS = 
@@ -17,16 +17,17 @@ MainClient : libPrivate.so MainClient.o
 	gcc -g -o MainClient MainClient.o -L. -lPrivate -ldl
 
 # -o <name> - name of the output file
-libPrivate.so: PrivateTreatment.cpp PrivateTreatment.h
-	g++ $(CFLAGS) -c -o CTreatment.o CTreatment.cpp
-	g++ $(CFLAGS) -c -o CConfig.o CConfig.cpp
-	g++ $(CFLAGS) -c -o CMethod.o CMethod.cpp
-	g++ $(CFLAGS) -c -o PrivateTreatment.o PrivateTreatment.cpp
-	g++ -Wall -shared -fPIC -o libPrivate.so PrivateTreatment.cpp \
-		CTreatment.cpp CConfig.cpp CMethod.cpp
+libPrivate.so: lib/src/PrivateTreatment.cpp lib/inc/PrivateTreatment.h
+	g++ $(CFLAGS) -c -o CTreatment.o lib/src/CTreatment.cpp
+	g++ $(CFLAGS) -c -o CConfig.o lib/src/CConfig.cpp
+	g++ $(CFLAGS) -c -o CMethod.o lib/src/CMethod.cpp
+	g++ $(CFLAGS) -c -o PrivateTreatment.o lib/src/PrivateTreatment.cpp
+	#g++ $(CFLAGS) -c -o CGraph.o lib/algo/CGraph.cpp
+	g++ -Wall -shared -fPIC -o libPrivate.so lib/src/PrivateTreatment.cpp \
+		lib/src/CTreatment.cpp lib/src/CConfig.cpp lib/src/CMethod.cpp
 
-CTreatment.o : CTreatment.cpp CTreatment.h
-	g++ -Wall -c CTreatment.cpp
+CTreatment.o : lib/src/CTreatment.cpp lib/inc/CTreatment.h
+	g++ -Wall -c lib/src/CTreatment.cpp
 
 install:
 

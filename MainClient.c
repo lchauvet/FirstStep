@@ -1,4 +1,4 @@
-#include "PrivateTreatment.h"
+#include "lib/inc/PrivateTreatment.h"
 
 #include <stdlib.h>
 #include <stdio.h>
