@@ -1,3 +1,10 @@
+/******************************************************
+ *  MainClient.c
+ *  Purpose:
+ *
+ *  @author
+ *  @version
+ ******************************************************/
 #include "lib/inc/PrivateTreatment.h"
 
 #include <stdlib.h>
@@ -10,6 +17,12 @@ typedef int (*T_func2)(int);
 T_func1 func1;
 T_func2 func2;
 
+/**
+	Main function
+	@param  argc, int
+	@param  argv, char**
+	@return int
+*/
 int main(int argc, char** argv) {
    int      res = 0;
    void*    handle;

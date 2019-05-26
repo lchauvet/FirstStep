@@ -1,3 +1,11 @@
+/**
+	CConfig.h
+	Purpose: Configuration
+
+	@author
+	@version
+*/
+
 #ifndef CCONFIG_H
 #define CCONFIG_H
 

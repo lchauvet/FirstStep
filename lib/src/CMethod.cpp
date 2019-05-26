@@ -1,3 +1,10 @@
+/**
+	CMethod.cpp
+
+	Purpose:
+	@author
+	@version
+*/
 #include "./../inc/CMethod.h"
 
 #define NAME_METHOD    	"Lambda"

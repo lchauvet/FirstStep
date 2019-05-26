@@ -1,3 +1,10 @@
+/**
+	CMethod.h
+	Purpose : Method
+
+	@author:
+	@version:
+*/
 #ifndef CMETHOD_H
 #define CMETHOD_H
 

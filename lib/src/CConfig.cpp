@@ -1,3 +1,10 @@
+/**
+	CConfig.cpp
+	Purpose: Configuration
+
+	@author
+	@version
+*/
 #include "./../inc/CConfig.h"
 
 int  CConfig::compteur = 0;  /* on initialise notre compteur à zero */

@@ -1,3 +1,10 @@
+/**
+	CTreatment.h
+	Purpose:
+
+	@author
+	@version
+*/
 #ifndef CTREATMENT_H
 #define CTREATMENT_H
  

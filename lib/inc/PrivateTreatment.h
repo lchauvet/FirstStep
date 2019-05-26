@@ -1,7 +1,10 @@
-/*-------------------------------------------------------------------------*/
-/* File : PrivateTreatment.h                                               */
-/* Description : Used to generate libPrivate.so                            */
-/*-------------------------------------------------------------------------*/
+/**
+	PrivateTreatment.h
+	Purpose: Functions furnished in libPrivate.so
+
+	@author
+	@version
+*/
 #ifndef  PRIVATE_TREATMENT_H
 #define  PRIVATE_TREATMENT_H
 

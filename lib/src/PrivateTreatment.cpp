@@ -1,10 +1,20 @@
+/**
+	PrivateTreatment.cpp
+	Purpose:
+
+	@author
+	@version
+*/
 #include "./../inc/PrivateTreatment.h"
 #include "./../inc/CTreatment.h"
 #include "./../inc/CMethod.h"
 
-/***************************************************
- * @function : function1
- ***************************************************/
+/**
+	function1
+
+	@param
+	@return
+ */
 int function1(int number, char* message)
 {
   CTreatment treat1;
@@ -22,9 +32,12 @@ int function1(int number, char* message)
   return(ret);
 }
 
-/************************************************
- * @function : function2
- ************************************************/
+/**
+	function2
+
+	@param
+	@return
+*/
 int function2(int number)
 {
   CTreatment* objetBase   = new CTreatment();
@@ -56,7 +69,12 @@ int function2(int number)
   return(ret);
 }
 
-/* Main point d'entrée */
+/**
+ 	DLL entry point 
+	@param	argc, int
+	@param	argv, char**
+	@return
+*/
 int main(int argc, char** argv){
    return(0);
 }
